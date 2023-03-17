@@ -1,0 +1,14 @@
+  //1 const [mouse , setMouse] =useState("")
+  // return (
+    // 1<div onMouseMove={(e)=> {
+    //   console.log(e.clientX, e.clientY);
+    //   setMouse(`X: ${e.clientX},Y: ${e.clientY}`)
+
+    // }} className="App" style={{
+    //   display: "flex",
+    //   background:"coral",
+    //   width: "300px",
+    //   height: "300px",
+    // }}>
+    //   {mouse}
+    // </div>
