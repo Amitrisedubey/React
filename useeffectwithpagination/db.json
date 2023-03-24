@@ -2,36 +2,36 @@
   "todos": [
     {
       "title": "Play BGMI",
-      "status": true,
+      "status": false,
       "id": 1
     },
     {
-      "title": "Hockey",
+      "title": "Playing Hockey",
       "status": false,
       "id": 2
     },
     {
-      "title": "Playing Ludo",
+      "title": "Play Call Of Duty",
       "status": false,
       "id": 3
     },
     {
-      "title": "Playing Cricket",
+      "title": "Play Fortnite",
       "status": false,
       "id": 4
     },
     {
-      "title": "Ipl",
+      "title": "Play Legend",
       "status": false,
       "id": 5
     },
     {
-      "title": "Playing Dream 11",
+      "title": "play Cricket",
       "status": false,
       "id": 6
     },
     {
-      "title": "UseEffect Classes",
+      "title": "play Wcc",
       "status": false,
       "id": 7
     }

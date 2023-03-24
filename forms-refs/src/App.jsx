@@ -1,21 +1,103 @@
-import logo from './logo.svg';
-import './App.css';
-import { useState , useRef, useEffect } from 'react';
-import { Form } from './components/forms';
+import logo from "./logo.svg";
+import "./App.css";
+import { useState, useRef, useEffect } from "react";
+import { Form } from "./components/forms";
+import { Slide } from "./components/topbottom";
 
 function App() {
-  const inputRef = useRef(null)
+  const inputRef = useRef(null);
   // {current: 1}
- 
-      return (
+
+  return (
     <div className="App">
-      <Form/>
-     </div>
-  )
+      <div
+        style={{
+          height: "400px",
+          width: "200px",
+          background: "coral",
+        }}
+      >
+        1
+      </div>
+
+      <div
+        style={{
+          height: "400px",
+          width: "200px",
+          background: "yellow",
+        }}
+      >
+        2
+      </div>
+      <div
+        style={{
+          height: "400px",
+          width: "200px",
+          background: "green",
+        }}
+      >
+        3
+      </div>
+      <div
+        ref={inputRef}
+        style={{
+          height: "400px",
+          width: "200px",
+          background: "pink",
+        }}
+      >
+        4
+      </div>
+      <div
+        style={{
+          height: "400px",
+          width: "200px",
+          background: "grey",
+        }}
+      >
+        5
+      </div>
+      <div
+        style={{
+          height: "400px",
+          width: "200px",
+          background: "black",
+        }}
+      >
+        6
+      </div>
+      <div
+        style={{
+          height: "400px",
+          width: "200px",
+          background: "blue",
+        }}
+      >
+        7
+      </div>
+      <div
+        style={{
+          height: "400px",
+          width: "200px",
+          background: "purple",
+        }}
+      >
+        8
+      </div>
+      <button
+        onClick={() => {
+          inputRef.current.scrollIntoView({
+            behavior: "smooth",
+          });
+        }}
+      >
+        Scroll to top
+      </button>
+    </div>
+  );
 }
 
 export default App;
-
 
 /**
  * 1. Variable, saves it's own state.

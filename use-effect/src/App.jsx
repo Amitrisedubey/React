@@ -10,6 +10,8 @@ function App() {
     <div className="App">
       {show ? <Timer /> : null}
       <button onClick={() => setShow(!show)}>{show ? "Hide" : "Show"}</button>
+
+      <Todo />
     </div>
   );
 }
