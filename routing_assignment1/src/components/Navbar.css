@@ -1,0 +1,13 @@
+.navv {
+  background-color: #61481c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 45px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+}
+h2 {
+  color: #e6b325;
+}

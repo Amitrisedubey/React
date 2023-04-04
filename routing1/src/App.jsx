@@ -8,6 +8,7 @@ import { Navbar } from "./components/Navbar";
 import { Products } from "./components/product";
 import { Users } from "./components/Users";
 import { UserDetails } from "./components/UserDetails";
+import { Login } from "./components/login";
 function App() {
   return (
     <div className="App">
@@ -19,6 +20,8 @@ function App() {
         <Route path="/users" element={<Users />}></Route>
         <Route path="/users/:userid" element={<UserDetails />}></Route>
         <Route path="/product/:id" element={<Products />}></Route>
+        <Route path="/login" element={<Login />}></Route>
+        <Route path="*" element={<div>404 Page not found</div>}></Route>
       </Routes>
     </div>
   );

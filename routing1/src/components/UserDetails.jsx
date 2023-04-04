@@ -1,12 +1,14 @@
-import { useParams } from "react-router-dom";
-import React from "react";
+import { Navigate, useParams } from "react-router-dom";
+import React, { useContext } from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { AuthContext } from "../context/authContext";
 
 export const UserDetails = () => {
   const [userdata, setUserData] = useState(null);
   const [isLoading, setIsloading] = useState(true);
   const { userid } = useParams();
+  const { token } = useContext(AuthContext);
   const getUserDetails = () => {
     setIsloading(true);
     axios
@@ -22,7 +24,12 @@ export const UserDetails = () => {
   };
   useEffect(() => {
     getUserDetails();
-  }, []);
+  }, [userid]);
+
+  if (!token) {
+    return <Navigate to={"/login"} />;
+  }
+
   return isLoading ? (
     <div>...Loadding</div>
   ) : (
