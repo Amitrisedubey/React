@@ -9,6 +9,7 @@ import { Products } from "./components/product";
 import { Users } from "./components/Users";
 import { UserDetails } from "./components/UserDetails";
 import { Login } from "./components/login";
+import { PrivateRoute } from "./components/PrivateRoute";
 function App() {
   return (
     <div className="App">
@@ -17,8 +18,22 @@ function App() {
         <Route path="/" element={<Home />}></Route>
         <Route path="/about" element={<About />}></Route>
         <Route path="/contact" element={<Contact />}></Route>
-        <Route path="/users" element={<Users />}></Route>
-        <Route path="/users/:userid" element={<UserDetails />}></Route>
+        <Route
+          path="/users"
+          element={
+            <PrivateRoute>
+              <Users />
+            </PrivateRoute>
+          }
+        ></Route>
+        <Route
+          path="/users/:userid"
+          element={
+            <PrivateRoute>
+              <UserDetails />
+            </PrivateRoute>
+          }
+        ></Route>
         <Route path="/product/:id" element={<Products />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="*" element={<div>404 Page not found</div>}></Route>

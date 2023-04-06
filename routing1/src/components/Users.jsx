@@ -26,12 +26,13 @@ export const Users = () => {
     <div>...Loading</div>
   ) : (
     <div>
-      <h3>Users</h3>
+      <h1 style={{ color: "red" }}>Users</h1>
       {users.map((user) => (
         <div style={{ padding: "3px" }}>
           <Link
             to={`/users/${user.id}`}
-          >{`${user.first_name},${user.last_name}`}</Link>
+            style={{ textDecoration: "none" }}
+          >{`${user.first_name} ${user.last_name}`}</Link>
         </div>
       ))}
     </div>
