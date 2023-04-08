@@ -1,34 +1,77 @@
-//reducer
-const reducer = (state, action) => ({
-  ...state,
-  ...action.payload,
+//Actions
+const ADD_TODO = "ADD_TODO";
+const TOGGLE_TODO = "TOGGLE_TODO";
+
+//Action creators
+const addTodo = (payload) => ({
+  type: ADD_TODO,
+  payload: {
+    title: payload,
+    status: false,
+  },
 });
-//action is an object
-//action has some types and payload
-//initial state
+
+const toggleTodo = (payload) => ({
+  type: TOGGLE_TODO,
+  payload,
+});
+//Reducer
+
+const reducer = (state, { type, payload }) => {
+  switch (type) {
+    case ADD_TODO:
+      return {
+        ...state,
+        todo: [...state.todo, payload],
+      };
+    case TOGGLE_TODO:
+      return {
+        ...state,
+        todo: state.todo.map((item) =>
+          item.title === payload ? { ...item, status: !item.status } : item
+        ),
+      };
+    default:
+      return state;
+  }
+};
+// 1. action is an object
+// 2. action has some types and payload
+
+// initial state
+
 const initState = {
-  counter: 0,
+  todo: [],
 };
 
-//////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 class Store {
   constructor(reducer, initState) {
     this.reducer = reducer;
     this.state = initState;
   }
-  //retrieve the state from reducer
+  //retriev the state from reducer
   getState() {
     return this.state;
   }
-  //dispatch and action
+
+  //dispatch an action to reducer
   dispatch(action) {
     this.state = this.reducer(this.state, action);
   }
 }
-/////////////////////////////////////////////////////////////
 
-var store = new Store(reducer, { counter: 0 });
-
+const store = new Store(reducer, initState);
 console.log(store.getState());
-store.dispatch({ type: "UPDATE", payload: { counter: 10 } });
+store.dispatch(addTodo("Buy Milk"));
+console.log(store.getState());
+
+store.dispatch(addTodo("Buy Bread"));
+console.log(store.getState());
+
+store.dispatch({
+  type: TOGGLE_TODO,
+  payload: "Buy Bread",
+});
 console.log(store.getState());
