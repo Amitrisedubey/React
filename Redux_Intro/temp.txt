@@ -1,0 +1,13 @@
+class Store {
+  constructor(reducer, init) {
+    //
+    this.reducer = reducer;
+    this.state = init;
+  }
+  getState() {
+    return this.state;
+  }
+  dispatch(action) {
+    this.state = this.reducer(this.state, action);
+  }
+}
