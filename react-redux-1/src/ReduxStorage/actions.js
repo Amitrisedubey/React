@@ -5,6 +5,8 @@ import {
   ADD_TODO_SUCCESS,
   REMOVE_TODO,
   GET_TODO_SUCCESS,
+  GET_TODO_LOADING,
+  GET_TODO_ERROR,
 } from "./actionTypes";
 
 export const addTodo = (data) => ({
@@ -32,7 +34,7 @@ export const addTodoError = (err) => {
 
 export const getTodoLoading = () => {
   return {
-    type: GET_TODO_SUCCESS,
+    type: GET_TODO_LOADING,
   };
 };
 export const getTodoSuccess = (data) => {
@@ -44,7 +46,7 @@ export const getTodoSuccess = (data) => {
 
 export const getTodoError = (err) => {
   return {
-    type: GET_TODO_SUCCESS,
+    type: GET_TODO_ERROR,
     payload: err,
   };
 };
