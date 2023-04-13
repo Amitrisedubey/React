@@ -17,19 +17,19 @@ export const Todos = () => {
   }));
   const dispatch = useDispatch();
   useEffect(() => {
-    async function req() {
-      try {
-        dispatch(getTodoLoading());
-        const data = await fetch("http://localhost:3001/todos").then((d) =>
-          d.json()
-        );
-        dispatch(getTodoSuccess(data));
-      } catch (err) {
-        dispatch(getTodoError(err));
-      }
-    }
-    req();
+    getTodos();
   }, []);
+  async function getTodos() {
+    try {
+      dispatch(getTodoLoading());
+      const data = await fetch("http://localhost:3001/todos").then((d) =>
+        d.json()
+      );
+      dispatch(getTodoSuccess(data));
+    } catch (err) {
+      dispatch(getTodoError(err));
+    }
+  }
 
   return loading ? (
     <div>Loading....</div>
