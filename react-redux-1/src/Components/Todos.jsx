@@ -7,13 +7,13 @@ import {
   getTodoLoading,
   getTodoSuccess,
   getTodoError,
-} from "../ReduxStorage/actions";
+} from "../features/Todos/actions";
 export const Todos = () => {
   const [text, setText] = useState("");
   const { loading, todos, error } = useSelector((state) => ({
-    loading: state.loading,
-    todos: state.todos,
-    error: state.error,
+    loading: state.todosState.loading,
+    todos: state.todosState.todos,
+    error: state.todosState.error,
   }));
   const dispatch = useDispatch();
   useEffect(() => {
