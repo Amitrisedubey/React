@@ -6,6 +6,9 @@ const rootReducer = combineReducers({
   counterState: CounterReducer,
   todosState: TodoReducer,
 });
-export const store = createStore(rootReducer);
+export const store = createStore(
+  rootReducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
-console.log(store.getState());
+//console.log(store.getState());
