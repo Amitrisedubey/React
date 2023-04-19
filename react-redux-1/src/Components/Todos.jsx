@@ -7,6 +7,7 @@ import {
   getTodoLoading,
   getTodoSuccess,
   getTodoError,
+  getData,
 } from "../features/Todos/actions";
 export const Todos = () => {
   const [text, setText] = useState("");
@@ -20,15 +21,7 @@ export const Todos = () => {
     getTodos();
   }, []);
   async function getTodos() {
-    try {
-      dispatch(getTodoLoading());
-      const data = await fetch("http://localhost:3001/todos").then((d) =>
-        d.json()
-      );
-      dispatch(getTodoSuccess(data));
-    } catch (err) {
-      dispatch(getTodoError(err));
-    }
+    dispatch(getData());
   }
 
   return loading ? (
@@ -59,6 +52,7 @@ export const Todos = () => {
             .then((res) => {
               //success
               dispatch(addTodoSuccess(res));
+              //dispatch(getData());
             })
             .catch((err) => {
               //error

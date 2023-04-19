@@ -50,6 +50,17 @@ export const getTodoError = (err) => {
     payload: err,
   };
 };
+export const getData = () => (dispatch) => {
+  dispatch(getTodoLoading());
+  fetch("http://localhost:3001/todos")
+    .then((d) => d.json())
+    .then((data) => {
+      dispatch(getTodoSuccess(data));
+    })
+    .catch((e) => {
+      dispatch(getTodoError(e));
+    });
+};
 export const removeTodo = (id) => ({
   type: REMOVE_TODO,
   payload: id,
