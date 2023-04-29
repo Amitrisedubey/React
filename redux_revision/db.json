@@ -1,0 +1,54 @@
+{
+  "todos": [
+    {
+      "title": "Learn React",
+      "status": false,
+      "id": 1
+    },
+    {
+      "title": "Learn Redux",
+      "status": false,
+      "id": 2
+    },
+    {
+      "title": "Learn Chakra UI",
+      "status": false,
+      "id": 3
+    },
+    {
+      "title": "Learn Chakra UI",
+      "status": false,
+      "id": 4
+    },
+    {
+      "title": "Learn Chakra UI",
+      "status": false,
+      "id": 5
+    },
+    {
+      "title": "play g",
+      "status": false,
+      "id": 6
+    },
+    {
+      "title": "play g",
+      "status": false,
+      "id": 7
+    },
+    {
+      "title": "",
+      "status": false,
+      "id": 8
+    },
+    {
+      "title": "",
+      "status": false,
+      "id": 9
+    },
+    {
+      "title": "",
+      "status": false,
+      "id": 10
+    }
+  ]
+}

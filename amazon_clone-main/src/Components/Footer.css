@@ -1,0 +1,33 @@
+.footer{background-color:#232F3E}
+
+
+.foot {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 20px;
+}
+.foot-in {
+    margin:5%
+}
+p{color:white}
+
+p:nth-child(1) {
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  .amazon_logo{display:grid;grid-template-columns: auto auto ;}
+  .English{color:white;font-size:25px}
+  .logo_img{text-align:center;margin-left:30%}
+  span{color:white; padding:1%;font-size:13px;margin-left:3%}
+  span:hover {
+    text-decoration: underline;
+    cursor:pointer
+  }
+  p:hover {
+    text-decoration: underline;
+    cursor:pointer
+  }
+  hr{color:red}
+ .country > span {color:white}
+ 
